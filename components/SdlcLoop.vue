@@ -3,6 +3,7 @@ import { computed, useId } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const { $clicks, $renderContext } = useSlideContext()
+const assetBase = import.meta.env.BASE_URL
 const instanceId = `sdlc-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`
 const complete = computed(() => ['overview', 'previewNext', 'print'].includes($renderContext.value))
 const shown = (step: number) => complete.value || $clicks.value >= step
@@ -74,7 +75,7 @@ const clipId = (index: number, part: string) => `${instanceId}-${index}-${part}`
         <svg :x="stage.x" :y="stage.y" :width="stage.w" :height="stage.h"
           :viewBox="`${stage.x} ${stage.y} ${stage.w} ${stage.h}`" overflow="hidden">
           <image width="1672" height="941"
-            :href="`/images/sdlc/layers/${layer.name === 'primary' || layer.name === 'detail' ? 'objects' : layer.name}.png`"
+            :href="`${assetBase}images/sdlc/layers/${layer.name === 'primary' || layer.name === 'detail' ? 'objects' : layer.name}.png`"
             :clip-path="layer.name === 'primary' || layer.name === 'detail' ? `url(#${clipId(index, layer.name)})` : undefined" />
         </svg>
       </g>

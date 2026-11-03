@@ -3,6 +3,7 @@ import { computed, useId } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const { $clicks, $renderContext } = useSlideContext()
+const assetBase = import.meta.env.BASE_URL
 const id = `asf-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`
 const complete = computed(() => ['overview', 'previewNext', 'print'].includes($renderContext.value))
 const shown = (step: number) => complete.value || $clicks.value >= step
@@ -52,7 +53,7 @@ const splitY = (row: number) => row === 0 ? 280 : 730
         <svg :x="40 + node.col * 440" :y="node.row === 0 ? 60 : 530" width="350"
           :height="350 * sourceHeight(node.row) / 418"
           :viewBox="`${node.col * 418} ${sourceY(node.row)} 418 ${sourceHeight(node.row)}`" overflow="hidden">
-          <image :href="`/images/agentic-software-factory/${layer.file}`" width="1672" height="941"
+          <image :href="`${assetBase}images/agentic-software-factory/${layer.file}`" width="1672" height="941"
             :clip-path="layer.part ? `url(#${id}-${layer.part}-${node.row})` : undefined" />
         </svg>
       </g>

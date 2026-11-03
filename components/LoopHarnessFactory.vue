@@ -3,6 +3,7 @@ import { computed, useId } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const { $clicks, $renderContext } = useSlideContext()
+const assetBase = import.meta.env.BASE_URL
 const id = `lhf-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`
 const complete = computed(() => ['overview', 'previewNext', 'print'].includes($renderContext.value))
 const shown = (step: number) => complete.value || $clicks.value >= step
@@ -39,7 +40,7 @@ const layers = [
           :class="[layer.name, { visible: shown(section.step) }]"
           :style="{ animationDelay: shown(section.step) ? `${layer.delay}ms` : '0ms' }">
           <g :clip-path="layer.crop ? `url(#${id}-${layer.crop})` : undefined">
-            <image :href="`/images/loop-harness-factory/${layer.file}`" width="2079" height="756" />
+            <image :href="`${assetBase}images/loop-harness-factory/${layer.file}`" width="2079" height="756" />
           </g>
         </g>
       </g>
