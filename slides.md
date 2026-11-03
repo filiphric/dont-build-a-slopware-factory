@@ -23,7 +23,7 @@ Filip Hric
 - we’ll discuss quality and verification, boundaries and so on
 - my name is Filip, I’m from company called Qodo, where we provide a platform for AI code quality and code governance
 - I myself spent more than a decade in various QA positions before I moved to software development and then later into developer relations
-- so quality is something close to my heart and I love to discuss
+- so quality is something close to my heart and I love to discuss it, especially on meetups like this, I’m looking forward to the conversations we’ll have after th etalk
 -->
 
 ---
@@ -72,7 +72,7 @@ name: Loop, harness, factory
 - this is what many teams already do. If you're using Codex or Claude Code, you can set a pretty broad goal, and the agent will iterate until it reaches that goal
 - [click] harness is basically a loop within certain constraints - this means the environment, sandbox, standards enter the loop and help it define what done means
 - a good way to explain the difference between a loop and a harness would be that in the loop *the agent* or prompt decides when a task is done, in harness, "done" is defined *by the environment*, so e.g. until integration tests pass, we are not done
-- I find that many engineering teams have some sort of combination of these two going, where engineers no longer just prompt their agent, but have already defined standards and give the agent the right tools to complete a task - that tool can be your documentation, Linear or Jira ticket etc. we know have agent rules and skills, and these drive the agent output
+- I find that many engineering teams have some sort of combination of these two going, where engineers no longer just prompt their agent, but have already defined standards and give the agent the right tools to complete a task - that tool can be your documentation, Linear or Jira ticket etc. we now have agent rules and skills, and these drive the agent output
 - [click] - finally, the software factory is basically a system of harnesses, continuously delivering software
 -->
 
@@ -254,13 +254,53 @@ name: Build quality checks around team experience
 </v-clicks>
 
 <!--
-- every few weeks we get a new release of smarter and more capable model, but Better models alone won’t know the decisions and tradeoffs that shaped your system.
-- Turn the team’s experience into rules and context that both coding and review agents can use.
-- Feed accepted and rejected review findings back into those checks, so they reflect current judgment.
-- Use that same experience throughout development, with an independent check before shipping.
-- Review the whole change across repositories, and give engineers visibility into its impact.
-- This is how faster code generation can translate into faster delivery
-- I promised not to pitch anything, after all I’m not in Sales, but if anything out of this is interesting to you, come talk to me, this is what we are building at Qodo
+- and in practice, I think this means building quality checks around what your team has learned about your system
+- if you want to build a successful software factory you need to be strategic and intentinal about
+
+[click] **Capture team knowledge**
+- smarter models won’t automatically know the decisions and tradeoffs that shaped your system.
+- capture those decisions, lessons from reviews, and past incidents as rules and context that coding and review agents can use.
+- feed accepted and rejected review findings back into those checks, so they reflect the team’s current judgment.
+
+[click] **Check early and often**
+- use that knowledge when reviewing the ticket, the plan, and the local change, while there’s still time to fix the direction.
+- keep an independent review before shipping, **don’t remove it**, so the coding agent’s own assessment isn’t the only evidence we rely on.
+
+[click] **Review related PRs together**
+- I think we are moving away from the principle of small commits and small iterative changes, and we’ll rather start shipping features as working packages
+- and it makes sense, breaking things into small packages makes sense for humans, to keep shipping somewhat safely, but agent can review related changes together, including changes across repositories, to check whether the whole feature works as intended
+- but if you think about it, on human level it just makes much more sense and it makes sense for a software factory too.
+
+[click] **Keep engineers in control**
+- when I say control, I don’t mean theat engineers should read every line of code, but it means
+- showing engineers what changed, why it changed, and what else it affects, so they can make an informed decision about shipping it.
+- use their feedback to improve the checks and context for the next change.
+
+[click] **Plan for more review**
+- faster coding creates more code to verify, so review capacity has to grow with generation capacity.
+- invest in useful automated checks and focused human review, otherwise we just move the bottleneck further down the line.
+- that’s how the factory can keep improving as it delivers more software.
+-->
+
+---
+layout: section
+name: Every review should improve the factory
+---
+
+# Every <em style="color: var(--signal-deep)">change</em> should improve the <em style="color: var(--signal-deep)">product.</em><br>Every <em style="color: var(--signal-deep)">review</em> should improve the <em style="color: var(--signal-deep)">factory.</em>
+
+<style>
+.editorial.section h1 {
+  max-width: none;
+  font-size: 40px;
+  line-height: 1.35;
+}
+</style>
+
+<!--
+- to close this off let me leave you with a thought framework for how I think about software factories and making them successfull
+- Every change should improve the product.Every review should improve the factory.
+- if any of this is interesting to you, come talk to me afterwards — this is what we are building at Qodo.
 -->
 
 ---
