@@ -1,0 +1,24 @@
+Generated with the built-in imagegen tool, 2026-11-03.
+
+generation-paper.png
+Use case: productivity-visual
+Asset type: reusable transparent paper backdrop for presentation diagram panels.
+Primary request: a single large blank sheet of warm beige handmade paper, flat and front-facing, with gently irregular torn deckle edges on all four sides.
+Composition/framing: landscape 3:2 sheet filling almost the entire image, small transparent margin outside all edges. Orthographic overhead view, no perspective.
+Color palette: paper base #e5dfd2, fine fibers and subtle creases in closely related warm ivory and beige tones. Restrained editorial paper collage style.
+Materials/textures: tactile matte recycled paper, visible delicate fibers, softly uneven surface, slight natural wrinkles near edges, center calm and light enough for dark text.
+Constraints: actual transparent background outside the sheet; no text, no symbols, no border outline, no objects, no dramatic folds or large shadows. The sheet itself is fully opaque.
+
+verification-paper.png
+Use case: productivity-visual
+Asset type: reusable transparent paper backdrop for presentation diagram panels.
+Primary request: a single large blank sheet of bright yellow handmade paper, flat and front-facing, with gently irregular torn deckle edges on all four sides.
+Composition/framing: landscape 3:2 sheet filling almost the entire image, small transparent margin outside all edges. Orthographic overhead view, no perspective.
+Color palette: paper base #ffe234, fine fibers and subtle creases in closely related golden yellow tones, matching a warm yellow highlighter. Restrained editorial paper collage style.
+Materials/textures: tactile matte recycled paper, visible delicate fibers, softly uneven surface, slight natural wrinkles near edges, center calm and light enough for dark text.
+Constraints: actual transparent background outside the sheet; no text, no symbols, no border outline, no objects, no dramatic folds or large shadows. The sheet itself is fully opaque.
+
+
+generation-paper-green.png
+Edited using built-in imagegen. Reference 1: generation-paper.png (edit target). Reference 2: ../loop-harness-factory/teal.png (color reference).
+Edit image 1, the beige blank paper sheet. Change only its paper color to the muted teal green #438c89 used in the earlier deck collage (image 2 is a color reference only). Preserve the single full blank sheet, subtle fiber texture, natural creases, torn deckle edges, front-facing composition and transparent margin exactly. Keep its center uniformly colored and calm for overlaying diagram content. No text, no shapes, no objects. Keep actual alpha transparency outside the sheet. Do not copy the shapes or cutouts from image 2.
